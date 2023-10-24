@@ -1,10 +1,10 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
+import PropTypes from 'prop-types'
 
-import { styles } from "../styles";
-import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
-import { testimonials } from "../constants";
+import { styles } from "../styles"
+import { SectionWrapper } from "../hoc"
+import { fadeIn, textVariant } from "../utils/motion"
+import { testimonials } from "../constants"
 
 const FeedbackCard = ({
   index,
@@ -41,7 +41,17 @@ const FeedbackCard = ({
       </div>
     </div>
   </motion.div>
-);
+)
+
+FeedbackCard.propTypes = {
+  index: PropTypes.number,
+  testimonial: PropTypes.string,
+  name: PropTypes.string,
+  designation: PropTypes.string,
+  company: PropTypes.string,
+  image: PropTypes.string
+}
+
 
 const Feedbacks = () => {
   return (
@@ -60,7 +70,7 @@ const Feedbacks = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default SectionWrapper(Feedbacks, "");
